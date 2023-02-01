@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="создание проекта">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AbstractTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Subtask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Task.java" afterDir="false" />
+    <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="Начал реализовавать ImMemoryManager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +19,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -80,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675173486932</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="начал реализацию класов task">
+      <created>1675176421417</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675176421417</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +108,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="создание проекта" />
-    <option name="LAST_COMMIT_MESSAGE" value="создание проекта" />
+    <MESSAGE value="начал реализацию класов task" />
+    <MESSAGE value="Начал реализовавать ImMemoryManager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
+    <option name="LAST_COMMIT_MESSAGE" value="Начал реализовавать ImMemoryManager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
   </component>
 </project>
