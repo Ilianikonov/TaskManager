@@ -3,13 +3,13 @@ public abstract class AbstractTask {
     private final int id;
     private String name;
     private String descriptions;
-    private String status;
+    private Status status;
 
     public AbstractTask(int id, String name, String descriptions, String status) {
         this.id = id;
         this.name = name;
         this.descriptions = descriptions;
-        this.status = status;
+        this.status = Status.valueOf(status);
     }
 
     public String getName() {
@@ -32,11 +32,11 @@ public abstract class AbstractTask {
         return id;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }

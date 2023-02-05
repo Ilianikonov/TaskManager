@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,5 +34,8 @@ public class ImMemoryManager implements ManagerInterface {
     }
     public ArrayList<Subtask> getListAllSubtaskBelongingToEpic(Epic epic){
         return epic.getSubtasks();
+    }
+    public void addTask(ObjectInputStream file) throws IOException, ClassNotFoundException {
+        addTask((AbstractTask) file.readObject());
     }
 }

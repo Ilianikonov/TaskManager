@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="Начал реализовавать ImMemoryManager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Status.java" afterDir="false" />
+    <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AbstractTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AbstractTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +44,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -92,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675176421417</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика.">
+      <created>1675258132455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675258132455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +121,7 @@
     <MESSAGE value="создание проекта" />
     <MESSAGE value="начал реализацию класов task" />
     <MESSAGE value="Начал реализовавать ImMemoryManager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
-    <option name="LAST_COMMIT_MESSAGE" value="Начал реализовавать ImMemoryManager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
+    <MESSAGE value="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
+    <option name="LAST_COMMIT_MESSAGE" value="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
   </component>
 </project>

@@ -1,6 +1,10 @@
 package org.example;
 
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public interface ManagerInterface {
 

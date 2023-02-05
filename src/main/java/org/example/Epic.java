@@ -12,7 +12,6 @@ public class Epic extends AbstractTask {
         subtask.setEpicId(getId());
         subtasks.add(subtask);
     }
-
     public ArrayList<Subtask> getSubtasks() {
         return subtasks;
     }
