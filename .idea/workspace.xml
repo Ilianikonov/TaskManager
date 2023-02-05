@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика.">
+      <change afterPath="$PROJECT_DIR$/epicFile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ImMemoryManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ManagerInterfaceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subtaskFie" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taskFile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AbstractTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AbstractTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" afterDir="false" />
     </list>
@@ -19,9 +24,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,16 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ImMemoryManagerTest.testGetAllTasks">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="TaskManager" />
@@ -67,8 +84,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ImMemoryManagerTest.testGetAllTasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ImMemoryManagerTest" />
+      <option name="METHOD_NAME" value="testGetAllTasks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ImMemoryManagerTest.testGetAllTasks" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -103,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675258132455</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика.">
+      <created>1675576938074</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675576938074</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
