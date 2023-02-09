@@ -8,9 +8,18 @@ public class ImMemoryManager implements ManagerInterface {
     private final Map<Integer,Task> taskMap = new HashMap<>();
     private final Map<Integer,Epic> epicMap = new HashMap<>();
     private final Map<Integer,Subtask> subtaskMap = new HashMap<>();
+
     @Override
-    public ArrayList<AbstractTask> getAllTasks(){
+    public ArrayList<Task> getAllTasks(){
         return new ArrayList<>(taskMap.values());
+    }
+    @Override
+    public ArrayList<Epic> getAllEpic(){
+        return new ArrayList<>(epicMap.values());
+    }
+    @Override
+    public ArrayList<Subtask> getAllSubtask(){
+        return new ArrayList<>(subtaskMap.values());
     }
     @Override
     public void deleteAllTasks(){

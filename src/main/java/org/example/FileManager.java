@@ -9,16 +9,36 @@ import java.util.ArrayList;
 public class FileManager implements ManagerInterface {
 
     @Override
-    public ArrayList<AbstractTask> getAllTasks() {
-        ArrayList<AbstractTask> list = new ArrayList<>();
-        try {
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader("taskFile"));
-            } catch (FileNotFoundException e) {
-                throw new IllegalArgumentException(e);
-            }
+    public ArrayList<Task> getAllTasks() {
+        ArrayList<Task> list = new ArrayList<>();
+        try {BufferedReader reader = new BufferedReader(new FileReader("taskFile"));
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
 
-            return list;
+    @Override
+    public ArrayList<Epic> getAllEpic() {
+        ArrayList<Epic> list = new ArrayList<>();
+        try {BufferedReader reader = new BufferedReader(new FileReader("epicFile"));
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
+
+    @Override
+    public ArrayList<Subtask> getAllSubtask() {
+        ArrayList<Subtask> list = new ArrayList<>();
+        try {BufferedReader reader = new BufferedReader(new FileReader("subtaskFile"));
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
     }
 
     @Override

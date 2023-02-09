@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public interface ManagerInterface {
 
-    ArrayList<AbstractTask> getAllTasks();
+    ArrayList<Task> getAllTasks();
+    ArrayList<Epic> getAllEpic();
+    ArrayList<Subtask> getAllSubtask();
     void deleteAllTasks();
     void deleteAllEpic();
     void deleteAllSubtask();

@@ -5,11 +5,11 @@ public abstract class AbstractTask {
     private String descriptions;
     private Status status;
 
-    public AbstractTask(int id, String name, String descriptions, String status) {
+    public AbstractTask(int id, String name, String descriptions, Status status) {
         this.id = id;
         this.name = name;
         this.descriptions = descriptions;
-        this.status = Status.valueOf(status);
+        this.status = status;
     }
 
     public String getName() {
