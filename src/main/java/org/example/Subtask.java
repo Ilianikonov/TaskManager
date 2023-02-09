@@ -2,8 +2,9 @@ package org.example;
 
 public class Subtask extends AbstractTask {
     private int epicId;
-    public Subtask(int id, String name, String descriptions, String status) {
+    public Subtask(int epicId, int id, String name, String descriptions, Status status) {
         super(id, name, descriptions, status);
+        this.epicId = epicId;
     }
 
     public int getEpicId() {
