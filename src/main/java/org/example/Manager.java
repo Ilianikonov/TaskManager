@@ -20,12 +20,12 @@ public abstract class Manager {
     public abstract void deleteAllTasks();
     public abstract void deleteAllEpic();
     public abstract void deleteAllSubtask();
-    public abstract Task getByIdTask(int id);
+    public abstract Task getTaskById(int id);
     public abstract Epic getEpicById(int id);
-    public abstract Subtask getByIdSubtask(int id);
-    public abstract void deleteAnTaskId(int id);
-    public abstract void deleteAnEpicId(int id);
-    public abstract void deleteAnSubtaskId(int id);
+    public abstract Subtask getSubtaskById(int id);
+    public abstract void deleteTaskById(int id);
+    public abstract void deleteEpicById(int id);
+    public abstract void deleteSubtaskById(int id);
     public abstract void addTask(Task task);
     public abstract void addEpic(Epic task);
     public abstract void addSubtask(Subtask task);

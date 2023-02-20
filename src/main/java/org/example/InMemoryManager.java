@@ -40,7 +40,7 @@ public class InMemoryManager extends Manager {
     }
 
     @Override
-    public Task getByIdTask(int id) {
+    public Task getTaskById(int id) {
         return taskMap.get(id);
     }
 
@@ -50,20 +50,20 @@ public class InMemoryManager extends Manager {
     }
 
     @Override
-    public Subtask getByIdSubtask(int id) {
+    public Subtask getSubtaskById(int id) {
         return subtaskMap.get(id);
     }
     @Override
-    public void deleteAnTaskId(int id){
+    public void deleteTaskById(int id){
         taskMap.remove(id);
     }
 
     @Override
-    public void deleteAnEpicId(int id) {
+    public void deleteEpicById(int id) {
         epicMap.remove(id);
     }
     @Override
-    public void deleteAnSubtaskId(int id) {
+    public void deleteSubtaskById(int id) {
         subtaskMap.remove(id);
     }
     @Override

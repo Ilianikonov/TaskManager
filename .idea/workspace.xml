@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="тесты к im memory manager">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TaskFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taksFile" afterDir="false" />
+    <list default="true" id="c3392152-0cda-4171-b821-b55f6c9bb9ae" name="Changes" comment="тесты к im memory manager&#10;и начало реализации файл менеджера">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Epic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ImMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InMemoryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InMemoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InMemoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Subtask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ImMemoryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ImMemoryManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManagerInterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subtaskFie" beforeDir="false" afterPath="$PROJECT_DIR$/subtaskFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675922895133</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="тесты к im memory manager&#10;и начало реализации файл менеджера">
+      <created>1676885160260</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676885160260</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +235,7 @@
     <MESSAGE value="Начал реализовавать Manager c хранением данных в HashMap.&#10;Методы для каждого из типа задач(Задача/Эпик/Подзадача):&#10;Получение списка всех задач.&#10;Удаление всех задач.&#10;Получение по идентификатору.&#10;Создание. Сам объект должен передаваться в качестве параметра.&#10;Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.&#10;Удаление по идентификатору.&#10;Дополнительные методы:&#10;Получение списка всех подзадач определённого эпика." />
     <MESSAGE value="создали тесты&#10;создали класс FileManager &#10;доработали класс ImMemoryManager" />
     <MESSAGE value="тесты к im memory manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="тесты к im memory manager" />
+    <MESSAGE value="тесты к im memory manager&#10;и начало реализации файл менеджера" />
+    <option name="LAST_COMMIT_MESSAGE" value="тесты к im memory manager&#10;и начало реализации файл менеджера" />
   </component>
 </project>

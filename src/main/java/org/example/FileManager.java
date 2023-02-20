@@ -1,5 +1,6 @@
 package org.example;
 
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -53,7 +54,7 @@ public class FileManager extends Manager {
         return list;
     }
 
-        @Override
+    @Override
     public ArrayList<Epic> getAllEpic() {
             ArrayList<Epic> list = new ArrayList<>();
             try (BufferedReader reader = new BufferedReader(new FileReader("epicFile"))){
@@ -101,7 +102,7 @@ try {
     }
 
     @Override
-    public Task getByIdTask(int id) {
+    public Task getTaskById(int id) {
         return null;
     }
 
@@ -111,22 +112,23 @@ try {
     }
 
     @Override
-    public Subtask getByIdSubtask(int id) {
+    public Subtask getSubtaskById(int id) {
         return null;
     }
 
     @Override
-    public void deleteAnTaskId(int id) {
+    public void deleteTaskById(int id) {
+
 
     }
 
     @Override
-    public void deleteAnEpicId(int id) {
+    public void deleteEpicById(int id) {
 
     }
 
     @Override
-    public void deleteAnSubtaskId(int id) {
+    public void deleteSubtaskById(int id) {
 
     }
 
