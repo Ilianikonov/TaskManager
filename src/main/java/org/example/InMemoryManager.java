@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ImMemoryManager implements ManagerInterface {
+public class InMemoryManager extends Manager {
     private final Map<Integer,Task> taskMap = new HashMap<>();
     private final Map<Integer,Epic> epicMap = new HashMap<>();
     private final Map<Integer,Subtask> subtaskMap = new HashMap<>();
@@ -13,14 +13,17 @@ public class ImMemoryManager implements ManagerInterface {
     public ArrayList<Task> getAllTasks(){
         return new ArrayList<>(taskMap.values());
     }
+
     @Override
     public ArrayList<Epic> getAllEpic(){
         return new ArrayList<>(epicMap.values());
     }
+
     @Override
     public ArrayList<Subtask> getAllSubtask(){
         return new ArrayList<>(subtaskMap.values());
     }
+
     @Override
     public void deleteAllTasks(){
         taskMap.clear();
@@ -42,7 +45,7 @@ public class ImMemoryManager implements ManagerInterface {
     }
 
     @Override
-    public Epic getByIdEpic(int id) {
+    public Epic getEpicById(int id) {
         return epicMap.get(id);
     }
 

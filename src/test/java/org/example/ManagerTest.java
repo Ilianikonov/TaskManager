@@ -1,15 +1,12 @@
 package org.example;
 
-import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
+public abstract class ManagerTest<T extends Manager> {
     protected T manager;
 
     @Test
@@ -108,16 +105,14 @@ public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
         manager.addEpic(epic);
         manager.addEpic(epic1);
         manager.addEpic(epic2);
-        assertEquals(epic2,manager.getByIdEpic(3));
+        assertEquals(epic2,manager.getEpicById(3));
     }
     @Test
     public void testGetByIdSubtask() {
-        Subtask subtask = new Subtask(11, 1, "name", "descriptions", Status.NEW);
-        Subtask subtask1 = new Subtask(11, 2, "name", "descriptions", Status.IN_PROGRESS);
-        Subtask subtask2 = new Subtask(11, 3, "name", "descriptions", Status.DONE);
-        manager.addSubtask(subtask);
-        manager.addSubtask(subtask1);
-        manager.addSubtask(subtask2);
+        Epic epic = manager.getTaskFactory().createEpic(11,"fafa", " faf", Status.NEW);
+        Subtask subtask = manager.getTaskFactory().createSubtask(11,1,"name", "faef", Status.NEW);
+        Subtask subtask1 = manager.getTaskFactory().createSubtask(11,2,"name", "faef", Status.DONE);
+        Subtask subtask2 = manager.getTaskFactory().createSubtask(11,3,"name", "faef", Status.IN_PROGRESS);
         assertEquals(subtask1,manager.getByIdSubtask(2));
     }
     @Test

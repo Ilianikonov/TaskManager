@@ -14,5 +14,8 @@ public class Epic extends AbstractTask {
     public ArrayList<Subtask> getSubtasks() {
         return subtasks;
     }
-
+    @Override
+    public String toString() {
+        return this.getId() + " " + this.getName() + " " + this.getDescriptions() + " " + this.getStatus();
+    }
 }
