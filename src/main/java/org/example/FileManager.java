@@ -1,19 +1,54 @@
 package org.example;
 
-import java.awt.image.BufferedImageOp;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+
+import java.io.*;
 import java.util.ArrayList;
 
-public class FileManager implements ManagerInterface {
+public class FileManager extends Manager {
 
+    public Task toTask(String line) {
+        String[] arrayline = line.split(" ");
+        int id = Integer.parseInt(arrayline[0]);
+        Status status = Status.NEW;
+        if (arrayline[3].equals("DONE")) {
+            status = Status.DONE;
+        } else if (arrayline[3].equals("IN_PROGRESS")) {
+            status = Status.IN_PROGRESS;
+        }
+        return new Task(id, arrayline[1], arrayline[2], status);
+    }
+    public Epic toEpic(String line){
+        String[] arrayline = line.split(" ");
+        int id = Integer.parseInt(arrayline[0]);
+        Status status = Status.NEW;
+        if (arrayline[3].equals("DONE")){
+            status = Status.DONE;
+        } else if (arrayline[3].equals("IN_PROGRESS")){
+            status = Status.IN_PROGRESS;
+        }
+        return new Epic(id, arrayline[1], arrayline[2], status);
+    }
+    public Subtask toSubtask(String line){
+        String[] arrayline = line.split(" ");
+        int epicId = Integer.parseInt(arrayline[0]);
+        int id = Integer.parseInt(arrayline[1]);
+        Status status = Status.NEW;
+        if (arrayline[4].equals("DONE")){
+            status = Status.DONE;
+        } else if (arrayline[4].equals("IN_PROGRESS")){
+            status = Status.IN_PROGRESS;
+        }
+        return new Subtask(epicId, id, arrayline[2], arrayline[3], status);
+    }
     @Override
     public ArrayList<Task> getAllTasks() {
         ArrayList<Task> list = new ArrayList<>();
-        try {BufferedReader reader = new BufferedReader(new FileReader("taskFile"));
-        }
-        catch (FileNotFoundException e) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("taskFile"))){
+            String line;
+            while ((line = reader.readLine()) != null){
+                list.add(toTask(line));
+            }
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return list;
@@ -21,21 +56,27 @@ public class FileManager implements ManagerInterface {
 
     @Override
     public ArrayList<Epic> getAllEpic() {
-        ArrayList<Epic> list = new ArrayList<>();
-        try {BufferedReader reader = new BufferedReader(new FileReader("epicFile"));
-        }
-        catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        return list;
+            ArrayList<Epic> list = new ArrayList<>();
+            try (BufferedReader reader = new BufferedReader(new FileReader("epicFile"))){
+                String line;
+                while ((line = reader.readLine()) != null){
+                    list.add(toEpic(line));
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return list;
     }
 
     @Override
     public ArrayList<Subtask> getAllSubtask() {
         ArrayList<Subtask> list = new ArrayList<>();
-        try {BufferedReader reader = new BufferedReader(new FileReader("subtaskFile"));
-        }
-        catch (FileNotFoundException e) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("subtaskFile"))){
+            String line;
+            while ((line = reader.readLine()) != null){
+                list.add(toSubtask(line));
+            }
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return list;
@@ -43,7 +84,11 @@ public class FileManager implements ManagerInterface {
 
     @Override
     public void deleteAllTasks() {
-
+try {
+    BufferedWriter writer = new BufferedWriter(new FileWriter("taksFile"));
+} catch (IOException e) {
+    throw new RuntimeException(e);
+}
     }
 
     @Override
@@ -57,48 +102,61 @@ public class FileManager implements ManagerInterface {
     }
 
     @Override
-    public Task getByIdTask(int id) {
+    public Task getTaskById(int id) {
         return null;
     }
 
     @Override
-    public Epic getByIdEpic(int id) {
+    public Epic getEpicById(int id) {
         return null;
     }
 
     @Override
-    public Subtask getByIdSubtask(int id) {
+    public Subtask getSubtaskById(int id) {
         return null;
     }
 
     @Override
-    public void deleteAnTaskId(int id) {
+    public void deleteTaskById(int id) {
+
 
     }
 
     @Override
-    public void deleteAnEpicId(int id) {
+    public void deleteEpicById(int id) {
 
     }
 
     @Override
-    public void deleteAnSubtaskId(int id) {
+    public void deleteSubtaskById(int id) {
 
     }
 
     @Override
     public void addTask(Task task) {
-
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("taksFile"))) {
+         writer.write(task.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void addEpic(Epic task) {
-
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("epicFile"))) {
+            writer.write(task.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void addSubtask(Subtask task) {
-
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("subtaskFile"))) {
+            writer.write(task.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

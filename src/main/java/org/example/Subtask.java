@@ -7,6 +7,17 @@ public class Subtask extends AbstractTask {
         this.epicId = epicId;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Subtask{" +
+//                "epicId=" + epicId +
+//                "} " + super.toString();
+//    }
+
+        @Override
+    public String toString() {
+        return this.epicId + " " + this.getId() + " " + this.getName() + " " + this.getDescriptions() + " " + this.getStatus();
+    }
     public int getEpicId() {
         return epicId;
     }

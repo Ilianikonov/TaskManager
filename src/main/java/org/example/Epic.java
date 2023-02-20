@@ -15,4 +15,14 @@ public class Epic extends AbstractTask {
         return subtasks;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Epic{" +
+//                "subtasks=" + subtasks +
+//                "} " + super.toString();
+//    }
+        @Override
+    public String toString() {
+        return this.getId() + " " + this.getName() + " " + this.getDescriptions() + " " + this.getStatus();
+    }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ImMemoryManager implements ManagerInterface {
+public class InMemoryManager extends Manager {
     private final Map<Integer,Task> taskMap = new HashMap<>();
     private final Map<Integer,Epic> epicMap = new HashMap<>();
     private final Map<Integer,Subtask> subtaskMap = new HashMap<>();
@@ -13,14 +13,17 @@ public class ImMemoryManager implements ManagerInterface {
     public ArrayList<Task> getAllTasks(){
         return new ArrayList<>(taskMap.values());
     }
+
     @Override
     public ArrayList<Epic> getAllEpic(){
         return new ArrayList<>(epicMap.values());
     }
+
     @Override
     public ArrayList<Subtask> getAllSubtask(){
         return new ArrayList<>(subtaskMap.values());
     }
+
     @Override
     public void deleteAllTasks(){
         taskMap.clear();
@@ -37,30 +40,30 @@ public class ImMemoryManager implements ManagerInterface {
     }
 
     @Override
-    public Task getByIdTask(int id) {
+    public Task getTaskById(int id) {
         return taskMap.get(id);
     }
 
     @Override
-    public Epic getByIdEpic(int id) {
+    public Epic getEpicById(int id) {
         return epicMap.get(id);
     }
 
     @Override
-    public Subtask getByIdSubtask(int id) {
+    public Subtask getSubtaskById(int id) {
         return subtaskMap.get(id);
     }
     @Override
-    public void deleteAnTaskId(int id){
+    public void deleteTaskById(int id){
         taskMap.remove(id);
     }
 
     @Override
-    public void deleteAnEpicId(int id) {
+    public void deleteEpicById(int id) {
         epicMap.remove(id);
     }
     @Override
-    public void deleteAnSubtaskId(int id) {
+    public void deleteSubtaskById(int id) {
         subtaskMap.remove(id);
     }
     @Override

@@ -1,15 +1,12 @@
 package org.example;
 
-import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
+public abstract class ManagerTest<T extends Manager> {
     protected T manager;
 
     @Test
@@ -98,7 +95,7 @@ public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
         manager.addTask(task);
         manager.addTask(task1);
         manager.addTask(task2);
-        assertEquals(task,manager.getByIdTask(1));
+        assertEquals(task,manager.getTaskById(1));
     }
     @Test
     public void testGetByIdEpic() {
@@ -108,17 +105,15 @@ public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
         manager.addEpic(epic);
         manager.addEpic(epic1);
         manager.addEpic(epic2);
-        assertEquals(epic2,manager.getByIdEpic(3));
+        assertEquals(epic2,manager.getEpicById(3));
     }
     @Test
     public void testGetByIdSubtask() {
-        Subtask subtask = new Subtask(11, 1, "name", "descriptions", Status.NEW);
-        Subtask subtask1 = new Subtask(11, 2, "name", "descriptions", Status.IN_PROGRESS);
-        Subtask subtask2 = new Subtask(11, 3, "name", "descriptions", Status.DONE);
-        manager.addSubtask(subtask);
-        manager.addSubtask(subtask1);
-        manager.addSubtask(subtask2);
-        assertEquals(subtask1,manager.getByIdSubtask(2));
+        Epic epic = manager.getTaskFactory().createEpic(11,"fafa", " faf", Status.NEW);
+        Subtask subtask = manager.getTaskFactory().createSubtask(11,1,"name", "faef", Status.NEW);
+        Subtask subtask1 = manager.getTaskFactory().createSubtask(11,2,"name", "faef", Status.DONE);
+        Subtask subtask2 = manager.getTaskFactory().createSubtask(11,3,"name", "faef", Status.IN_PROGRESS);
+        assertEquals(subtask1,manager.getSubtaskById(2));
     }
     @Test
     public void testDeleteAnTaskId() {
@@ -134,7 +129,7 @@ public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
         manager.addTask(task2);
         assertEquals(list,manager.getAllTasks());
         list.remove(task1);
-        manager.deleteAnTaskId(2);
+        manager.deleteTaskById(2);
         assertEquals(list,manager.getAllTasks());
     }
     @Test
@@ -151,7 +146,7 @@ public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
         manager.addEpic(epic2);
         assertEquals(list,manager.getAllEpic());
         list.remove(epic2);
-        manager.deleteAnEpicId(3);
+        manager.deleteEpicById(3);
         assertEquals(list,manager.getAllEpic());
     }
     @Test
@@ -169,7 +164,7 @@ public abstract class ManagerInterfaceTest<T extends ManagerInterface> {
         manager.addSubtask(subtask2);
         assertEquals(list,manager.getAllSubtask());
         list.remove(subtask);
-        manager.deleteAnSubtaskId(1);
+        manager.deleteSubtaskById(1);
         assertEquals(list,manager.getAllSubtask());
     }
     @Test
