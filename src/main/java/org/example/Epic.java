@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Epic extends AbstractTask {
     private final ArrayList<Subtask> subtasks = new ArrayList<>();
@@ -24,5 +25,18 @@ public class Epic extends AbstractTask {
         @Override
     public String toString() {
         return this.getId() + " " + this.getName() + " " + this.getDescriptions() + " " + this.getStatus();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Epic epic)) return false;
+        if (!super.equals(o)) return false;
+        return subtasks.equals(epic.subtasks);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), subtasks);
     }
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Subtask extends AbstractTask {
     private int epicId;
     public Subtask(int epicId, int id, String name, String descriptions, Status status) {
@@ -24,5 +26,19 @@ public class Subtask extends AbstractTask {
 
     public void setEpicId(int epicId) {
         this.epicId = epicId;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Subtask subtask)) return false;
+        if (!super.equals(o)) return false;
+        return epicId == subtask.epicId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), epicId);
     }
 }

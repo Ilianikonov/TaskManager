@@ -1,4 +1,7 @@
 package org.example;
+
+import java.util.Objects;
+
 public abstract class AbstractTask {
     private final int id;
     private String name;
@@ -38,5 +41,17 @@ public abstract class AbstractTask {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractTask that)) return false;
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(descriptions, that.descriptions) && status == that.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, descriptions, status);
     }
 }

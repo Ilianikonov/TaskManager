@@ -147,7 +147,7 @@ public class FileManager extends Manager {
         try (BufferedReader reader = new BufferedReader(new FileReader("subtaskFile"))){
             String line;
             while ((line = reader.readLine()) != null){
-                if (toTask(line).getId() == id){
+                if (toSubtask(line).getId() == id){
                     return toSubtask(line);
                 }
             }
@@ -185,7 +185,7 @@ public class FileManager extends Manager {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("epicFile.buffer"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    if (toTask(line).getId() != id){
+                    if (toEpic(line).getId() != id){
                         writer.write(line);
                         writer.newLine();
                     }
