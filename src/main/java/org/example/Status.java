@@ -4,5 +4,11 @@ public enum Status {
     NEW,
     IN_PROGRESS,
     DONE,
-    RR
+    RR,
+    MY_STATUS,
+    HOHOHO;
+
+    Status() {
+
+    }
 }
