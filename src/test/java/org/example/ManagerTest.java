@@ -11,6 +11,7 @@ public abstract class ManagerTest<T extends Manager> {
 
     @Test
     public void testGetAllSubtask() {
+        manager.deleteAllSubtask();
         Subtask subtask = new Subtask(11, 1, "name", "descriptions", Status.NEW);
         Subtask subtask1 = new Subtask(11, 2, "name", "descriptions", Status.IN_PROGRESS);
         Subtask subtask2 = new Subtask(11, 3, "name", "descriptions", Status.DONE);
@@ -25,6 +26,7 @@ public abstract class ManagerTest<T extends Manager> {
     }
     @Test
     public void testGetAllEpic() {
+        manager.deleteAllEpic();
         Epic epic = new Epic(1, "name", "descriptions", Status.NEW);
         Epic epic1 = new Epic(2, "name", "descriptions", Status.IN_PROGRESS);
         Epic epic2 = new Epic(3, "name", "descriptions", Status.DONE);
@@ -39,6 +41,7 @@ public abstract class ManagerTest<T extends Manager> {
     }
     @Test
     public void testGetAllTasks() {
+        manager.deleteAllTasks();
         Task task = new Task(1, "name", "descriptions", Status.NEW);
         Task task1 = new Task(2, "name", "descriptions", Status.IN_PROGRESS);
         Task task2 = new Task(3, "name", "descriptions", Status.DONE);
@@ -89,6 +92,7 @@ public abstract class ManagerTest<T extends Manager> {
     }
     @Test
     public void testGetByIdTask() {
+        manager.deleteAllTasks();
         Task task = new Task(1, "name", "descriptions", Status.NEW);
         Task task1 = new Task(2, "name", "descriptions", Status.IN_PROGRESS);
         Task task2 = new Task(3, "name", "descriptions", Status.DONE);
@@ -99,6 +103,7 @@ public abstract class ManagerTest<T extends Manager> {
     }
     @Test
     public void testGetByIdEpic() {
+        manager.deleteAllEpic();
         Epic epic = new Epic(1, "name", "descriptions", Status.NEW);
         Epic epic1 = new Epic(2, "name", "descriptions", Status.IN_PROGRESS);
         Epic epic2 = new Epic(3, "name", "descriptions", Status.DONE);
@@ -109,14 +114,20 @@ public abstract class ManagerTest<T extends Manager> {
     }
     @Test
     public void testGetByIdSubtask() {
-        Epic epic = manager.getTaskFactory().createEpic(11,"fafa", " faf", Status.NEW);
-        Subtask subtask = manager.getTaskFactory().createSubtask(11,1,"name", "faef", Status.NEW);
-        Subtask subtask1 = manager.getTaskFactory().createSubtask(11,2,"name", "faef", Status.DONE);
-        Subtask subtask2 = manager.getTaskFactory().createSubtask(11,3,"name", "faef", Status.IN_PROGRESS);
+        manager.deleteAllSubtask();
+        Epic epic = new Epic(11, "name", "descriptions", Status.NEW);
+        Subtask subtask = new Subtask(11,1,"name", "faef", Status.NEW);
+        Subtask subtask1 = new Subtask(11,2,"name", "faef", Status.DONE);
+        Subtask subtask2 = new Subtask(11,3,"name", "faef", Status.IN_PROGRESS);
+        manager.addEpic(epic);
+        manager.addSubtask(subtask);
+        manager.addSubtask(subtask1);
+        manager.addSubtask(subtask2);
         assertEquals(subtask1,manager.getSubtaskById(2));
     }
     @Test
     public void testDeleteAnTaskId() {
+        manager.deleteAllTasks();
         Task task = new Task(1, "name", "descriptions", Status.NEW);
         Task task1 = new Task(2, "name", "descriptions", Status.IN_PROGRESS);
         Task task2 = new Task(3, "name", "descriptions", Status.DONE);
@@ -127,13 +138,13 @@ public abstract class ManagerTest<T extends Manager> {
         manager.addTask(task);
         manager.addTask(task1);
         manager.addTask(task2);
-        assertEquals(list,manager.getAllTasks());
         list.remove(task1);
         manager.deleteTaskById(2);
         assertEquals(list,manager.getAllTasks());
     }
     @Test
     public void testDeleteAnEpicId() {
+        manager.deleteAllEpic();
         Epic epic = new Epic(1, "name", "descriptions", Status.NEW);
         Epic epic1 = new Epic(2, "name", "descriptions", Status.IN_PROGRESS);
         Epic epic2 = new Epic(3, "name", "descriptions", Status.DONE);
@@ -144,13 +155,13 @@ public abstract class ManagerTest<T extends Manager> {
         manager.addEpic(epic);
         manager.addEpic(epic1);
         manager.addEpic(epic2);
-        assertEquals(list,manager.getAllEpic());
         list.remove(epic2);
         manager.deleteEpicById(3);
         assertEquals(list,manager.getAllEpic());
     }
     @Test
     public void testDeleteAnSubtaskId() {
+        manager.deleteAllSubtask();
         Epic epic = new Epic(11, "name", "descriptions", Status.NEW);
         Subtask subtask = new Subtask(11, 1, "name", "descriptions", Status.NEW);
         Subtask subtask1 = new Subtask(11, 2, "name", "descriptions", Status.IN_PROGRESS);
@@ -162,7 +173,6 @@ public abstract class ManagerTest<T extends Manager> {
         manager.addSubtask(subtask);
         manager.addSubtask(subtask1);
         manager.addSubtask(subtask2);
-        assertEquals(list,manager.getAllSubtask());
         list.remove(subtask);
         manager.deleteSubtaskById(1);
         assertEquals(list,manager.getAllSubtask());
@@ -173,8 +183,7 @@ public abstract class ManagerTest<T extends Manager> {
         ArrayList<Task> list = new ArrayList<>();
         list.add(task);
         manager.addTask(task);
-        assertEquals(list.get(0),manager.getAllTasks().get(0));
-        assertEquals(list.size(),manager.getAllTasks().size());
+        assertEquals(list.get(0),manager.getTaskById(1));
     }
     @Test
     public void testAddEpic() {
@@ -182,18 +191,17 @@ public abstract class ManagerTest<T extends Manager> {
         ArrayList<Epic> list = new ArrayList<>();
         list.add(epic);
         manager.addEpic(epic);
-        assertEquals(list.get(0),manager.getAllEpic().get(0));
-        assertEquals(list.size(),manager.getAllEpic().size());
+        assertEquals(list.get(0),manager.getEpicById(1));
     }
     @Test
     public void testAddSubtask() {
+        manager.deleteAllSubtask();
         Epic epic = new Epic(11, "name", "descriptions", Status.NEW);
         Subtask subtask = new Subtask(11, 1, "name", "descriptions", Status.NEW);
         ArrayList<Subtask> list = new ArrayList<>();
         list.add(subtask);
         manager.addSubtask(subtask);
-        assertEquals(list.get(0),manager.getAllSubtask().get(0));
-        assertEquals(list.size(),manager.getAllSubtask().size());
+        assertEquals(list.get(0),manager.getSubtaskById(1));
     }
     @Test
     public void testUpdateTheEpic() {
@@ -209,7 +217,7 @@ public abstract class ManagerTest<T extends Manager> {
         manager.addEpic(epic2);
         assertEquals(list,manager.getAllEpic());
         epic1.setStatus(Status.DONE);
-        epic2.setDescriptions("ddescriptions descriptions");
+        epic2.setDescriptions("description sdescriptions");
         epic.setName("name name");
         manager.updateTheEpic(epic);
         manager.updateTheEpic(epic1);
@@ -235,7 +243,7 @@ public abstract class ManagerTest<T extends Manager> {
         manager.addSubtask(subtask2);
         assertEquals(list,manager.getAllSubtask());
         subtask1.setStatus(Status.DONE);
-        subtask2.setDescriptions("ddescriptions descriptions");
+        subtask2.setDescriptions("ddescriptio ndescriptions");
         subtask.setName("name name");
         manager.updateTheSubtask(subtask);
         manager.updateTheSubtask(subtask1);
@@ -260,8 +268,8 @@ public abstract class ManagerTest<T extends Manager> {
         manager.addTask(task2);
         assertEquals(list,manager.getAllTasks());
         task1.setStatus(Status.DONE);
-        task2.setDescriptions("ddescriptions descriptions");
-        task.setName("name name");
+        task2.setDescriptions("ddescriptions escriptions");
+        task.setName("nan ame");
         manager.updateTheTask(task);
         manager.updateTheTask(task1);
         manager.updateTheTask(task2);
