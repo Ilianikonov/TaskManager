@@ -54,4 +54,5 @@ public abstract class AbstractTask {
     public int hashCode() {
         return Objects.hash(id, name, descriptions, status);
     }
+
 }

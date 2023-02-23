@@ -5,10 +5,6 @@ public class Main {
         FileManager fileManager = new FileManager();
         Task task = new Task(2, "gmepmg", "eogk", Status.NEW);
         Task task1 = new Task(4, "gmepmg", "eogk", Status.NEW);
-        fileManager.addTask(task);
-        fileManager.addTask(task1);
-        task.setName("fafsbs");
-        fileManager.updateTheTask(task);
-        fileManager.deleteAllTasks();
+        Subtask subtask1 = new Subtask(4, 1,"gmepmg", "eogk", Status.NEW);
     }
 }

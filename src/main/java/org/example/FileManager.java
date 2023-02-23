@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class FileManager extends Manager {
 
     public Task toTask(String line) {
-        String[] arrayline = line.split(" ");
+        String[] arrayline = line.split("////");
         int id = Integer.parseInt(arrayline[0]);
         Status status = Status.NEW;
         if (arrayline[3].equals("DONE")) {
@@ -18,7 +18,7 @@ public class FileManager extends Manager {
         return new Task(id, arrayline[1], arrayline[2], status);
     }
     public Epic toEpic(String line){
-        String[] arrayline = line.split(" ");
+        String[] arrayline = line.split("////");
         int id = Integer.parseInt(arrayline[0]);
         Status status = Status.NEW;
         if (arrayline[3].equals("DONE")){
@@ -29,7 +29,7 @@ public class FileManager extends Manager {
         return new Epic(id, arrayline[1], arrayline[2], status);
     }
     public Subtask toSubtask(String line){
-        String[] arrayline = line.split(" ");
+        String[] arrayline = line.split("////");
         int epicId = Integer.parseInt(arrayline[0]);
         int id = Integer.parseInt(arrayline[1]);
         Status status = Status.NEW;
@@ -207,7 +207,7 @@ public class FileManager extends Manager {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("subtaskFile.buffer"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    if (toTask(line).getId() != id){
+                    if (toSubtask(line).getId() != id){
                         writer.write(line);
                         writer.newLine();
                     }
@@ -265,7 +265,7 @@ public class FileManager extends Manager {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("epicFile.buffer"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    if (toTask(line).getId() != task.getId()){
+                    if (toEpic(line).getId() != task.getId()){
                         writer.write(line);
                         writer.newLine();
                     } else {
@@ -290,7 +290,7 @@ public class FileManager extends Manager {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("subtaskFile.buffer"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    if (toTask(line).getId() != task.getId()){
+                    if (toSubtask(line).getId() != task.getId()){
                         writer.write(line);
                         writer.newLine();
                     } else {
